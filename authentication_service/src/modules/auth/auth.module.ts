@@ -5,12 +5,21 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { RolesModel, RolesSchema } from 'src/models/role.model';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-
+import {
+  UserPermissionsModel,
+  UserPermissionsSchema,
+} from 'src/models/user_permissions.model';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
+import { LocalStrategy } from './jwt_local_strategy';
 @Module({
   imports: [
+    PassportModule,
+    JwtModule.register({}),
     MongooseModule.forFeature([
       { name: UsersModel.name, schema: UsersSchema },
       { name: RolesModel.name, schema: RolesSchema },
+      { name: UserPermissionsModel.name, schema: UserPermissionsSchema },
     ]),
     ClientsModule.register([
       {
@@ -29,7 +38,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     ]),
   ],
 
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy],
 
   controllers: [AuthController],
 

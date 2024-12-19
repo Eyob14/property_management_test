@@ -5,7 +5,7 @@ export interface RolesInterface {
   _id?: Types.ObjectId | string;
   roleId: number;
   name: string;
-  permissions: string[];
+  permissionIds: string[];
   isDeleted?: boolean;
 }
 
@@ -20,7 +20,7 @@ export class RolesModel implements RolesInterface {
   name: string;
 
   @Prop({ type: Array<string> })
-  permissions: string[];
+  permissionIds: string[];
 
   @Prop({ type: Boolean })
   isDeleted?: boolean;

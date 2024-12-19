@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document } from 'mongoose';
 
 export enum UserType {
   TENANT = 'TENANT',
@@ -10,13 +10,12 @@ export enum UserType {
 }
 
 export interface UsersInterface {
-  _id?: Types.ObjectId | string;
+  _id?: string;
   email: string;
   password?: string;
   firstName: string;
   lastName: string;
   userType: UserType;
-  roleId: string;
   address?: Record<string, string>;
   phoneNumber?: string;
   isDeleted?: boolean;
@@ -27,9 +26,6 @@ export type UsersDocument = UsersModel & Document;
 
 @Schema({ timestamps: true, collection: 'users' })
 export class UsersModel implements UsersInterface {
-  @Prop({ type: String })
-  roleId: string;
-
   @Prop({ type: String })
   email: string;
 
