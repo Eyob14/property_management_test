@@ -19,9 +19,7 @@ export class AuthenticationController {
   }
 
   @Post('login')
-  async login(
-    @Body() payload: LoginDto,
-  ) {
+  async login(@Body() payload: LoginDto) {
     return await this.authenticationService.login(payload);
   }
 }

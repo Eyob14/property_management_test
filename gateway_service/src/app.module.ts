@@ -11,7 +11,7 @@ import { JobManagementModule } from './modules/job_management/job_management.mod
     ConfigModule.forRoot({ isGlobal: true }),
     AuthenticationModule,
     PropertyManagementModule,
-    JobManagementModule
+    JobManagementModule,
   ],
   controllers: [AppController],
   providers: [AppService],
