@@ -10,12 +10,12 @@ export class AuthenticationService {
     @Inject('AUTH_SERVICE')
     private readonly authClient: ClientKafka,
   ) {}
-  public async welcomePage(message: string) {
+  public async welcomePage(user_id: string, user_role: string) {
     return await this.httpService.request(
       'GET',
       Service_Api_Url.auth_service,
       null,
-      { message },
+      { user_id, user_role },
     );
   }
 }

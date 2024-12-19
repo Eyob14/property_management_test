@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AuthenticationService } from './authentication.service';
 import { AuthenticationController } from './authentication.controller';
-// import { ClientsModule, Transport } from '@nestjs/microservices';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 // import { AuthorizationModule } from 'src/core/modules/authorization/authorization.module';
 import { AxiosModule } from 'src/core/modules/axios/axios.module';
 
@@ -9,21 +9,21 @@ import { AxiosModule } from 'src/core/modules/axios/axios.module';
   imports: [
     AxiosModule,
     // AuthorizationModule,
-    // ClientsModule.register([
-    //   {
-    //     name: 'PROPERTY_SERVICE',
-    //     transport: Transport.KAFKA,
-    //     options: {
-    //       client: {
-    //         clientId: 'property',
-    //         brokers: [process.env.BROKER_URI],
-    //       },
-    //       consumer: {
-    //         groupId: 'property-consumer',
-    //       },
-    //     },
-    //   },
-    // ]),
+    ClientsModule.register([
+      {
+        name: 'AUTH_SERVICE',
+        transport: Transport.KAFKA,
+        options: {
+          client: {
+            clientId: 'authentication',
+            brokers: [process.env.BROKER_URI],
+          },
+          consumer: {
+            groupId: 'auth-consumer-1049',
+          },
+        },
+      },
+    ]),
   ],
   providers: [AuthenticationService],
   controllers: [AuthenticationController],
