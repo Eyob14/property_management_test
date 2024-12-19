@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PropertyManagementService } from './property_management.service';
-import { PropertyManagementController } from './property_management.controller';
+import { JobManagementService } from './job_management.service';
+import { JobManagementController } from './job_management.controller';
 // import { ClientsModule, Transport } from '@nestjs/microservices';
 // import { AuthorizationModule } from 'src/core/modules/authorization/authorization.module';
 import { AxiosModule } from 'src/core/modules/axios/axios.module';
@@ -12,22 +12,22 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     // AuthorizationModule,
     ClientsModule.register([
       {
-        name: 'PROPERTY_SERVICE',
+        name: 'JOB_SERVICE',
         transport: Transport.KAFKA,
         options: {
           client: {
-            clientId: 'property',
+            clientId: 'job',
             brokers: [process.env.BROKER_URI],
           },
           consumer: {
-            groupId: 'property-consumer',
+            groupId: 'job-consumer',
           },
         },
       },
     ]),
   ],
-  providers: [PropertyManagementService],
-  controllers: [PropertyManagementController],
-  exports: [PropertyManagementService],
+  providers: [JobManagementService],
+  controllers: [JobManagementController],
+  exports: [JobManagementService],
 })
-export class PropertyManagementModule {}
+export class JobManagementModule {}
