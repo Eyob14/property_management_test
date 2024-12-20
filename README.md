@@ -64,6 +64,24 @@ Follow these steps to set up and run the project:
 
   ```
 
+## Screenshots for the Microservices project:
+
+- Below is a preview of the database on mongod db atlas:
+![Database Design](./readme/database_view.png)
+
+- API Request `/api/tenants/dashboard`:
+![Database Design](./readme/tenant_dashboard.png)
+
+- API Request `/api/properties/search`:
+![Database Design](./readme/properties_search.png)
+
+- API Request `/api/jobs/assign`:
+![Database Design](./readme/assign_contractor.png)
+
+- API Request `/api/jobs/status`:
+![Database Design](./readme/jobs_by_status.png)
+
+
 ## Additional Notes
 
 - Ensure all dependencies are installed and Kafka is correctly configured before starting the services.
