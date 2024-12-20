@@ -1,0 +1,1225 @@
+{
+	"info": {
+		"_postman_id": "bf2f97c8-9da0-4e21-9afc-084dd8a21dda",
+		"name": "Property_management_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20756217"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<string>",
+						"description": "(Required) "
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userType\": \"HOMEOWNER\",\n    \"email\": \"eyob@gmail.com\",\n    \"firstName\": \"Eyob\",\n    \"lastName\": \"Zebene\",\n    \"password\": \"Eyob_1234\",\n    \"phoneNumber\": \"090101229201\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/authentication/signup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"authentication",
+						"signup"
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"<string>\",\n  \"userType\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"status\": \"<string>\",\n  \"providerId\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"imageUrl\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fullName\": \"<string>\",\n    \"avatar\": \"<string>\",\n    \"isPublic\": \"<boolean>\"\n  },\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"<string>\",\n  \"userType\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"status\": \"<string>\",\n  \"providerId\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"imageUrl\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"signup"
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<string>",
+						"description": "(Required) "
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eyob@gmail.com\",\n    \"password\": \"Eyob_1234\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/authentication/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"authentication",
+						"login"
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fullName\": \"<string>\",\n    \"avatar\": \"<string>\",\n    \"isPublic\": \"<boolean>\"\n  },\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "assign maintenance",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<string>",
+						"description": "(Required) "
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tenantId\": \"6765145a8ef5242b55b1f767\",\n    \"propertyId\": \"67650bd75570748f418f6b1a\",\n    \"assignedTo\": \"67652b92fb758d17e66824f1\",\n    \"jobId\": \"676512c17c444bc1e0c60ca9\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/jobs/assign",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"jobs",
+						"assign"
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fullName\": \"<string>\",\n    \"avatar\": \"<string>\",\n    \"isPublic\": \"<boolean>\"\n  },\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get tenant dashboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<string>",
+						"description": "(Required) "
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eyob@gmail.com\",\n    \"password\": \"Eyob_1234\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/properties/tenants/dashboard?tenantId=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"properties",
+						"tenants",
+						"dashboard"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fullName\": \"<string>\",\n    \"avatar\": \"<string>\",\n    \"isPublic\": \"<boolean>\"\n  },\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get properties search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<string>",
+						"description": "(Required) "
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eyob@gmail.com\",\n    \"password\": \"Eyob_1234\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/properties/search/6765145a8ef5242b55b1f767?userId=67652476fb758d17e66824ee",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"properties",
+						"search",
+						"6765145a8ef5242b55b1f767"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "new_company",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "Miami",
+							"disabled": true
+						},
+						{
+							"key": "userId",
+							"value": "67652476fb758d17e66824ee"
+						}
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fullName\": \"<string>\",\n    \"avatar\": \"<string>\",\n    \"isPublic\": \"<boolean>\"\n  },\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Jobs By Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<string>",
+						"description": "(Required) "
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eyob@gmail.com\",\n    \"password\": \"Eyob_1234\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/jobs/status/1?status=new",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"jobs",
+						"status",
+						"1"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "new"
+						}
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"user\": {\n    \"id\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"fullName\": \"<string>\",\n    \"avatar\": \"<string>\",\n    \"isPublic\": \"<boolean>\"\n  },\n  \"operations\": [\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"limit\": \"<integer>\",\n      \"usage\": \"<integer>\",\n      \"overage\": \"<integer>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Untitled Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "<string>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authentication/login?provider_id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "provider_id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api",
+			"type": "default"
+		}
+	]
+}

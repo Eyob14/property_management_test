@@ -64,23 +64,26 @@ Follow these steps to set up and run the project:
 
   ```
 
+6. **To test the apis on your local postman download and use this**
+
+- ![Property_management_test_version_one_postman](./readme/Property_management_test_version_one.postman_collection.json)
+
 ## Screenshots for the Microservices project:
 
 - Below is a preview of the database on mongod db atlas:
-![Database Design](./readme/database_view.png)
+  ![Database Design](./readme/database_view.png)
 
 - API Request `/api/tenants/dashboard`:
-![Database Design](./readme/tenant_dashboard.png)
+  ![tenants_dashboard](./readme/tenant_dashboard.png)
 
 - API Request `/api/properties/search`:
-![Database Design](./readme/properties_search.png)
+  ![properties_search](./readme/properties_search.png)
 
 - API Request `/api/jobs/assign`:
-![Database Design](./readme/assign_contractor.png)
+  ![jobs_assign](./readme/assign_contractor.png)
 
 - API Request `/api/jobs/status`:
-![Database Design](./readme/jobs_by_status.png)
-
+  ![jobs_status](./readme/jobs_by_status.png)
 
 ## Additional Notes
 
