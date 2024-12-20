@@ -10,4 +10,12 @@ export class JobsService {
     private JobsModel: Model<JobsDocument>,
     // private readonly logger: CustomLoggerService,
   ) {}
+
+  async assignMaintenanceJob(payload: any) {
+    return payload;
+  }
+
+  public async getJobsByStatus(queryData: any = {}) {
+    return queryData;
+  }
 }

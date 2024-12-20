@@ -5,14 +5,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { LoggerModule } from './modules/logger/logger.module';
 import { PropertiesModule } from './modules/properties/properties.module';
-import { TenanciesModule } from './modules/tenancies/tenancies.module';
+import { TenantsModule } from './modules/tenants/tenants.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGO_DB_CONN_URI),
     PropertiesModule,
-    TenanciesModule,
+    TenantsModule,
     LoggerModule,
   ],
   controllers: [AppController],

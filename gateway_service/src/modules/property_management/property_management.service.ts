@@ -17,4 +17,22 @@ export class PropertyManagementService {
       Service_Api_Url.property_mgt_service,
     );
   }
+
+  public async getTenantDashboard(tenantId: string) {
+    return await this.httpService.request(
+      'GET',
+      `${Service_Api_Url.property_mgt_service}tenants/dashboard/${tenantId}`,
+      null,
+      {},
+    );
+  }
+
+  public async getPropertiesSearch(queryData: any = {}) {
+    return await this.httpService.request(
+      'GET',
+      `${Service_Api_Url.property_mgt_service}properties/search`,
+      null,
+      queryData,
+    );
+  }
 }

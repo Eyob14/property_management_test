@@ -17,4 +17,26 @@ export class JobManagementService {
       Service_Api_Url.job_mgt_service,
     );
   }
+
+  public async assignMaintenanceJob(
+    data: any,
+    // user_id: string,
+    // role_id: string,
+  ) {
+    return await this.httpService.request(
+      'POST',
+      `${Service_Api_Url.job_mgt_service}jobs/assign`,
+      data,
+      {},
+    );
+  }
+
+  public async getJobsByStatus(queryData: any = {}) {
+    return await this.httpService.request(
+      'GET',
+      `${Service_Api_Url.job_mgt_service}jobs/status`,
+      null,
+      queryData,
+    );
+  }
 }
