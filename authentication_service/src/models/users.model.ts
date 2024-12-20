@@ -11,6 +11,7 @@ export enum UserType {
 
 export interface UsersInterface {
   _id?: string;
+  tenantId?: string;
   email: string;
   password?: string;
   firstName: string;
@@ -26,6 +27,9 @@ export type UsersDocument = UsersModel & Document;
 
 @Schema({ timestamps: true, collection: 'users' })
 export class UsersModel implements UsersInterface {
+  @Prop({ type: String })
+  tenantId: string;
+
   @Prop({ type: String })
   email: string;
 

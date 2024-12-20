@@ -23,7 +23,8 @@ export enum PaymentMethod {
 export interface TenanciesInterface {
   _id?: Types.ObjectId | string;
   propertyId: string;
-  tenantId?: string;
+  tenantId: string;
+  userId?: string;
   ownerId: string;
   bookingDate: Date;
   startDate?: Date;
@@ -50,6 +51,9 @@ export class TenanciesModel implements TenanciesInterface {
 
   @Prop({ type: String })
   tenantId: string;
+
+  @Prop({ type: String })
+  userId: string;
 
   @Prop({ type: Date, required: true })
   bookingDate: Date;
