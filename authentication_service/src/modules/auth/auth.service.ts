@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import {
   UsersDocument,
@@ -6,18 +6,11 @@ import {
   UsersModel,
 } from 'src/models/users.model';
 import { Model } from 'mongoose';
-import { ClientKafka } from '@nestjs/microservices';
 import { CustomHttpException } from 'src/utils/custom_error_class';
 import { UserRoles, USER_TYPES } from 'src/utils/constants';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
-
-interface JwtPayload {
-  name: string;
-  sub: number;
-  email?: string;
-  type?: string;
-}
+import { JwtPayload } from 'src/utils/auth.types';
 
 @Injectable()
 export class AuthService {
@@ -25,8 +18,6 @@ export class AuthService {
     private readonly jwtService: JwtService,
     @InjectModel(UsersModel.name)
     private usersModel: Model<UsersDocument>,
-    @Inject('AUTH_SERVICE') private readonly authClient: ClientKafka,
-    // private readonly logger: CustomLoggerService,
   ) {}
 
   private async hashPassword(password: string): Promise<string> {
@@ -149,5 +140,10 @@ export class AuthService {
     }
 
     return user;
+  }
+
+  public async getUserById(id: string): Promise<UsersInterface | null> {
+    const user = (await this.usersModel.findById(id)) as UsersDocument;
+    return user ? user.toObject() : null;
   }
 }

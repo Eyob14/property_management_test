@@ -1,23 +1,13 @@
-import {
-  Body,
-  Controller,
-  Get,
-  //   Delete,
-  //   Get,
-  //   Param,
-  Post,
-  Query,
-  //   Put,
-  //   Query,
-} from '@nestjs/common';
+import { Body, Controller, Get, Put, Query } from '@nestjs/common';
 import { JobsService } from './jobs.service';
+import { IAssignContractor } from 'src/utils/job_types';
 
 @Controller('jobs')
 export class JobsController {
   constructor(private readonly jobsService: JobsService) {}
 
-  @Post('assign')
-  async assignMaintenanceJob(@Body() payload: any) {
+  @Put('assign')
+  async assignMaintenanceJob(@Body() payload: IAssignContractor) {
     return await this.jobsService.assignMaintenanceJob(payload);
   }
 

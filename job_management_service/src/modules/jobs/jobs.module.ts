@@ -7,14 +7,15 @@ import {
   JobHistoriesModel,
   JobHistoriesSchema,
 } from 'src/models/job_histories.model';
+import { UsersModel, UsersSchema } from 'src/models/users.model';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: JobsModel.name, schema: JobsSchema },
       { name: JobHistoriesModel.name, schema: JobHistoriesSchema },
+      { name: UsersModel.name, schema: UsersSchema },
     ]),
-    // LoggerModule,
   ],
 
   providers: [JobsService],
