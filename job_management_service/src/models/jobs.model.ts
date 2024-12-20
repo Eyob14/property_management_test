@@ -12,6 +12,7 @@ export enum JobStatus {
 export interface JobsInterface {
   _id?: Types.ObjectId | string;
   propertyId: string;
+  tenantId: string;
   assignedTo?: string;
   createdBy: string;
   status: JobStatus;
@@ -28,6 +29,9 @@ export type JobsDocument = JobsModel & Document;
 export class JobsModel implements JobsInterface {
   @Prop({ type: String })
   propertyId: string;
+
+  @Prop({ type: String })
+  tenantId: string;
 
   @Prop({ type: String })
   assignedTo?: string;

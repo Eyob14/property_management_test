@@ -29,11 +29,9 @@ export class JobManagementController {
   async getJobsByStatus(
     @Req() req: UserTokenPayload,
     @Param('tenantId') tenantId: string,
-    @Query('status') status: string,
   ) {
     const queryData = {
       tenantId,
-      status: status || '',
       // user_id: req.user.name,
       // user_role: UserRoles[req.user.sub],
     };
